@@ -5,10 +5,12 @@ from .forms import NewItemForm,EditItemForm
 from .models import Item
 
 def items(request):
+    query = request.GET.get('query', '')
     items = Item.objects.filter(is_sold=False).order_by
 
     return render(request, 'item/items.html', {
-        'items': items
+        'items': items,
+        'query': query,
     })
 
 def detail(request, pk):
