@@ -6,7 +6,10 @@ from .models import Item
 
 def items(request):
     query = request.GET.get('query', '')
-    items = Item.objects.filter(is_sold=False).order_by
+    items = Item.objects.filter(is_sold=False).order_by('-created_at')
+
+    if query:
+        items = items.filter(name__icontains=query)
 
     return render(request, 'item/items.html', {
         'items': items,
