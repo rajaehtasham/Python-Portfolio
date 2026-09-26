@@ -7,6 +7,7 @@ from .models import Category, Item
 
 def items(request):
     query = request.GET.get('query', '')
+    category_id = request.GET.get('category', 0)
     categories = Category.objects.all()
     items = Item.objects.filter(is_sold=False).order_by('-created_at')
 
