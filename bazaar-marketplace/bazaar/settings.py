@@ -25,7 +25,12 @@ SECRET_KEY = 'django-insecure-euig-)gjijtgay61=%4+f35id6^a@s^^w+p3fak4-%obkpl&lk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
 ALLOWED_HOSTS = ['*']
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://python-portfolio-production.up.railway.app',
+]
 
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
@@ -33,6 +38,7 @@ LOGOUT_REDIRECT_URL = '/'
 
 
 # Application definition
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
