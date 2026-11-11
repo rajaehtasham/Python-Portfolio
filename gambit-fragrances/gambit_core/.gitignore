@@ -1,17 +1,5 @@
-# Python / Virtual Environment
 venv/
-env/
-ENV/
-*.pyc
 __pycache__/
-
-# Django local database & logs
+*.pyc
 db.sqlite3
-*.log
-
-# VS Code editor settings
 .vscode/
-
-# OS specific files
-Thumbs.db
-.DS_Store
